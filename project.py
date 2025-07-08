@@ -25,7 +25,7 @@ unit_type = data.groupby('unit_type')['unit_type'].count()
 data['is_resistance'] = data['empire_or_resistance'] == 'resistance'
 # print(data.head())
 
-
+data['unit_type'] = data['unit_type'].apply(lambda x: "unknown" if x =='invalid_unit' else x)
 
 sns.set_theme(style="whitegrid")
 
